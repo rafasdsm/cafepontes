@@ -1,0 +1,5 @@
+package com.example.cafepontes
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()
