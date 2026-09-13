@@ -3,7 +3,7 @@ import "package:flutter_svg/svg.dart";
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -14,6 +14,7 @@ class _HomePageState extends State<HomePage> {
   int car_cont = 0;
   String banner_location = "images/hero_banner.png";
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromRGBO(255, 251, 233, 100),
@@ -29,264 +30,282 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20,),
             launchbebidas_itens_section(),
             SizedBox(height: 60,),
-            Center(
-              child:Text(
-                "Nossos pães mais famosos",
-                style: TextStyle(
-                  fontSize: 50,
-                  fontWeight: FontWeight.bold,
-                  color:Colors.pink
-                ),
-                )
-              ),
-            SizedBox(height: 20,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  width: 500,
-                  height: 500,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20)
-                  ),
-                  child: Image.asset(
-                    "images/sourdough.png",
-                    fit: BoxFit.cover,
-                    ),
-                ),
-                SizedBox(width: 50,),
-                Container(
-                  width: 500,
-                  height: 500,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20)
-                  ),
-                  child: Image.asset(
-                    "images/pao_queijo.jpg",
-                    fit: BoxFit.cover,
-                    ),
-                )
-              ],
-            ),
-            SizedBox(height: 20,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Container(
-                  width: 500,
-                  height: 500,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20)
-                  ),
-                  child: Image.asset(
-                    "images/pao_baggete.jpg",
-                    fit: BoxFit.cover,
-                    ),
-                ),
-                SizedBox(width: 50,),
-                Container(
-                  width: 500,
-                  height: 500,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(20)
-                  ),
-                  child: Image.asset(
-                    "images/brioche.jpg",
-                    fit: BoxFit.cover,
-                    ),
-                )
-              ],
-            ),
+            paes_section(),
             SizedBox(height: 50,),
-            Padding(
-              padding: EdgeInsets.only(left: 300,right: 300),
-              child: Container(
-              width: double.infinity,
-              height: 500,
-              decoration: BoxDecoration(
-                color: Colors.brown.shade400,
-                borderRadius: BorderRadius.circular(32)
-              ),
-              child: Padding(
-                padding: EdgeInsets.only(left: 30,right: 30),
-                child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Text("Sobre a nossa história",style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.white
-                              ),),
-                              Text(
-                                "Saiba sobre como nos tornamos a maior\n empresa de cafeterias de Campinas",
-                                style: TextStyle(
-                                fontSize: 25,
-                                fontWeight: FontWeight.bold,
-                                color:Colors.white
-                              ),),
-                              SizedBox(height: 25,),
-                              Container(
-                                alignment: Alignment.center,
-                                width: 150,
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color:Colors.pink,
-                                  borderRadius: BorderRadius.circular(50)
-                                ),
-                                child: Text(
-                                  "Saiba Mais",
-                                  style: TextStyle(
-                                    color:Colors.white,
-                                    fontSize: 20
-                                  ),
-                                ),
-                              )
-                            ],
-                          ),
-                          Container(
-                            width: 400,
-                            height: 400,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(500)
-                            ),
-                            child: Image.asset(
-                              "images/logo.jpg",
-                              fit:BoxFit.cover
-                            ),
-                          )
-                        ],
-                      ),
-                )
-              ),
-              ),
+            historia_section(),
             SizedBox(height: 60,),
-            Container(
-              height: 350,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color:Colors.brown
-              ),
-              child: Column(
-                children: [
-                  SizedBox(height: 30,),
-                  Text("Café pontes",style: TextStyle(
-                    fontSize: 50,
-                    fontWeight: FontWeight.bold,
-                    color:Colors.white
-                  ),),
-                  SizedBox(height: 15,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        "images/instagram.svg",
-                        color:Colors.white,
-                        width: 64,
-                        height: 64,
-                      ),
-                      SizedBox(width: 30,),
-                      SvgPicture.asset(
-                        "images/youtube.svg",
-                        color:Colors.white,
-                        width: 64,
-                        height: 64,
-                      ),
-                      SizedBox(width: 30,),
-                      SvgPicture.asset(
-                        "images/linkedin.svg",
-                        color:Colors.white,
-                        width: 64,
-                        height: 64,
-                      ),
-                      SizedBox(width: 30,),
-                      SvgPicture.asset(
-                        color:Colors.white,
-                        "images/whatsapp.svg",
-                        width: 64,
-                        height: 64,
-                      ),
-                    ],
-                  ),
-                  SizedBox(height: 15,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text("Politica de privacidade",style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        decorationColor: Colors.white,
-                        fontSize: 20,
-                        color: Colors.white
-                      ),),
-                      SizedBox(width: 20,),
-                      Text("Politica de troca",style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        decorationColor: Colors.white,
-                        fontSize: 20,
-                        color: Colors.white
-                      ),),
-                      SizedBox(width: 20,),
-                      Text("Termos de uso",style: TextStyle(
-                        decoration: TextDecoration.underline,
-                        decorationColor: Colors.white,
-                        fontSize: 20,
-                        color: Colors.white
-                      ),),
-                    ],
-                  ),
-                  SizedBox(height: 50,),
-                  Center(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("Feito por Rafael mil grau",style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color:Colors.pink
-                        ),),
-                        SizedBox(width: 20,),
-                        Text(
-                          "Ajudado por Esther dois grais",
-                          style: TextStyle(
-                            color: Colors.lightGreenAccent,
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold
-                          ),
-                          )
-                      ],
-                    ),
-                  )
-                ],
-              ),
-            )
+            footer_section()
           ],
         ),
       ),
     );
   }
 
+  Column paes_section() {
+    return Column(
+            children: [
+              Center(
+                child:Text(
+                  "Nossos pães mais famosos",
+                  style: TextStyle(
+                    fontSize: 50,
+                    fontWeight: FontWeight.bold,
+                    color:Colors.pink
+                  ),
+                  )
+                ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 500,
+                    height: 500,
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20)
+                    ),
+                    child: Image.asset(
+                      "images/sourdough.png",
+                      fit: BoxFit.cover,
+                      ),
+                  ),
+                  SizedBox(width: 50,),
+                  Container(
+                    width: 500,
+                    height: 500,
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20)
+                    ),
+                    child: Image.asset(
+                      "images/pao_queijo.jpg",
+                      fit: BoxFit.cover,
+                      ),
+                  )
+                ],
+              ),
+              SizedBox(height: 20,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    width: 500,
+                    height: 500,
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20)
+                    ),
+                    child: Image.asset(
+                      "images/pao_baggete.jpg",
+                      fit: BoxFit.cover,
+                      ),
+                  ),
+                  SizedBox(width: 50,),
+                  Container(
+                    width: 500,
+                    height: 500,
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20)
+                    ),
+                    child: Image.asset(
+                      "images/brioche.jpg",
+                      fit: BoxFit.cover,
+                      ),
+                  )
+                ],
+              ),
+            ],
+          );
+  }
+
+  Padding historia_section() {
+    return Padding(
+            padding: EdgeInsets.only(left: 300,right: 300),
+            child: Container(
+            width: double.infinity,
+            height: 500,
+            decoration: BoxDecoration(
+              color: Colors.brown.shade400,
+              borderRadius: BorderRadius.circular(32)
+            ),
+            child: Padding(
+              padding: EdgeInsets.only(left: 30,right: 30),
+              child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Text("Sobre a nossa história",style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white
+                            ),),
+                            Text(
+                              "Saiba sobre como nos tornamos a maior\n empresa de cafeterias de Campinas",
+                              style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.bold,
+                              color:Colors.white
+                            ),),
+                            SizedBox(height: 25,),
+                            Container(
+                              alignment: Alignment.center,
+                              width: 150,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                color:Colors.pink,
+                                borderRadius: BorderRadius.circular(50)
+                              ),
+                              child: Text(
+                                "Saiba Mais",
+                                style: TextStyle(
+                                  color:Colors.white,
+                                  fontSize: 20
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                        Container(
+                          width: 400,
+                          height: 400,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(500)
+                          ),
+                          child: Image.asset(
+                            "images/logo.jpg",
+                            fit:BoxFit.cover
+                          ),
+                        )
+                      ],
+                    ),
+              )
+            ),
+            );
+  }
+
+  Container footer_section() {
+    return Container(
+            height: 350,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              color:Colors.brown
+            ),
+            child: Column(
+              children: [
+                SizedBox(height: 30,),
+                Text("Café pontes",style: TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.bold,
+                  color:Colors.white
+                ),),
+                SizedBox(height: 15,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    SvgPicture.asset(
+                      "images/instagram.svg",
+                      color:Colors.white,
+                      width: 64,
+                      height: 64,
+                    ),
+                    SizedBox(width: 30,),
+                    SvgPicture.asset(
+                      "images/youtube.svg",
+                      color:Colors.white,
+                      width: 64,
+                      height: 64,
+                    ),
+                    SizedBox(width: 30,),
+                    SvgPicture.asset(
+                      "images/linkedin.svg",
+                      color:Colors.white,
+                      width: 64,
+                      height: 64,
+                    ),
+                    SizedBox(width: 30,),
+                    SvgPicture.asset(
+                      color:Colors.white,
+                      "images/whatsapp.svg",
+                      width: 64,
+                      height: 64,
+                    ),
+                  ],
+                ),
+                SizedBox(height: 15,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Politica de privacidade",style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.white,
+                      fontSize: 20,
+                      color: Colors.white
+                    ),),
+                    SizedBox(width: 20,),
+                    Text("Politica de troca",style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.white,
+                      fontSize: 20,
+                      color: Colors.white
+                    ),),
+                    SizedBox(width: 20,),
+                    Text("Termos de uso",style: TextStyle(
+                      decoration: TextDecoration.underline,
+                      decorationColor: Colors.white,
+                      fontSize: 20,
+                      color: Colors.white
+                    ),),
+                  ],
+                ),
+                SizedBox(height: 50,),
+                Center(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text("Feito por Rafael mil grau",style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color:Colors.pink
+                      ),),
+                      SizedBox(width: 20,),
+                      Text(
+                        "Ajudado por Esther dois grais",
+                        style: TextStyle(
+                          color: Colors.lightGreenAccent,
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold
+                        ),
+                        )
+                    ],
+                  ),
+                )
+              ],
+            ),
+          );
+  }
+
   Center launchbebidas_itens_section() {
+    String text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam dignissim, orci quis aliquet consectetur, elit erat lobortis ex, eu sagittis tortor purus sed felis. Suspendisse maximus elit vel orci laoreet ultricies. Integer sodales dictum lorem eget porttitor. Etiam pretium in erat eget sollicitudin. Proin blandit finibus sapien. Nullam finibus magna sed ipsum dictum malesuada. Nullam posuere nulla augue, ac elementum lorem tempus ut. Nunc non augue nulla. Sed vel aliquet turpis, sed efficitur ipsum. Aenean efficitur ornare massa et ultrices. Etiam dictum porta justo eget elementum. Etiam malesuada quam porttitor, molestie urna quis, auctor lorem.";
+    List<String> names = ["Caramel bear","Chocolate bear","Strawberry bear"];
     return Center(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                launch_container("images/bear_caramelo.jpg"),
+                launch_container("images/bear_caramelo.jpg",text,names[0]),
                 SizedBox(width: 50,),
-                launch_container("images/bear_chocolate.jpg"),
+                launch_container("images/bear_chocolate.jpg",text,names[1]),
                 SizedBox(width: 50,),
-                launch_container("images/bear_morango.jpg"),
+                launch_container("images/bear_morango.jpg",text,names[2]),
               ],
             )
           );
@@ -316,22 +335,59 @@ class _HomePageState extends State<HomePage> {
           );
   }
 
-  Stack launch_container(String image_path) {
-    return Stack(
-              children: [
-                Container(
-                  width: 200,
-                  height: 300,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(32),
+  Container launch_container(String imagePath,String description,String name) {
+    /*
+    Adicionar:
+      - Quando clicar no produto, ir para ele
+    */
+    return Container(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  MouseRegion(
+                    cursor: SystemMouseCursors.click,
+                    child: GestureDetector(
+                      onTap: null,
+                      child: Container(
+                      width: 250,
+                      height: 300,
+                      clipBehavior: Clip.antiAlias,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(32)
+                      ),
+                      child: Image.asset(
+                        imagePath,
+                        fit:BoxFit.cover
+                      ),
+                    ),
+                    ),
                   ),
-                  child: Image.asset(
-                    image_path,
-                    fit: BoxFit.cover,
-                  ),
-                )
-              ],
+                  SizedBox(width: 30,),
+                  Container(
+                    width: 300,
+                    alignment: Alignment.center,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          name,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold
+                          ),
+                        ),
+                        SizedBox(height: 10,),
+                        Text(
+                          description,
+                          softWrap: true,
+                          textAlign: TextAlign.justify,
+                        )
+                      ],
+                    ),
+                  )
+                ],
+              ),
             );
   }
 
@@ -340,7 +396,10 @@ class _HomePageState extends State<HomePage> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Container(
+              MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  child: Container(
                 width: 200,
                 height: 50,
                 alignment: Alignment.center,
@@ -357,8 +416,15 @@ class _HomePageState extends State<HomePage> {
                   ),
                   ),
               ),
+                ),
+              ),
               SizedBox(width: 30,),
-              Container(
+              MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: GestureDetector(
+                  child: MouseRegion(
+                cursor: SystemMouseCursors.click,
+                child: Container(
                 width: 200,
                 height: 50,
                 alignment: Alignment.center,
@@ -379,11 +445,14 @@ class _HomePageState extends State<HomePage> {
                   ),
                   ),
               ),
+              ),
+                ),
+              )
             ],
           );
   }
 
-  Stack herobanner(String banner_location) {
+  Stack herobanner(String bannerLocation) {
     /*
     Futuro:
       - fazer com que a imagem se altere
@@ -393,11 +462,11 @@ class _HomePageState extends State<HomePage> {
     */
     return Stack(
             children: [
-              Container(
+              SizedBox(
                 width: double.infinity,
                 height: 600,
                 child: Image.asset(
-                  banner_location,
+                  bannerLocation,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -430,23 +499,23 @@ class _HomePageState extends State<HomePage> {
           );
   }
 
-  AppBar navbar(int car_cont) {
+  AppBar navbar(int carCont) {
     /*
     Futuro:
       - Vincular o modelo de carrinho ao carrinho
       - Adicionar os links para as outras páginas
     */ 
     bool iscar = false;
-    Text car_text = Text("");
-    if(car_cont >0){
+    Text carText = Text("");
+    if(carCont >0){
       iscar = true;
-      if(car_cont > 9){
-        car_text = Text("9+");
+      if(carCont > 9){
+        carText = Text("9+");
       }else{
-        car_text = Text("$car_cont");
+        carText = Text("$carCont");
     }}else{
       iscar = false;
-    };
+    }
     return AppBar(
       backgroundColor: Colors.brown,
       leadingWidth: 300,
@@ -497,7 +566,7 @@ class _HomePageState extends State<HomePage> {
               onPressed: null,
               icon: Icon(Icons.shopping_bag_rounded, color: Colors.white),
             ),
-            if(iscar)cart_bubble(car_text)
+            if(iscar)cart_bubble(carText)
           ],
         ),
         SizedBox(width: 30)
@@ -505,7 +574,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Positioned cart_bubble(Text car_text) {
+  Positioned cart_bubble(Text carText) {
     return Positioned(
             right: -1,
             bottom:-1,
@@ -517,7 +586,7 @@ class _HomePageState extends State<HomePage> {
               borderRadius: BorderRadius.circular(32),
               color: Colors.red,
             ),
-            child: car_text,
+            child: carText,
           ),
           );
   }
