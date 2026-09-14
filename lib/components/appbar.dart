@@ -1,3 +1,4 @@
+import "package:cafepontes/pages/desktop/cardapio.dart";
 import "package:cafepontes/pages/desktop/historia.dart";
 import "package:cafepontes/pages/desktop/home.dart";
 import "package:flutter/material.dart";
@@ -63,15 +64,22 @@ AppBar appbar_section(car_itens,context) {
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: ((context) => HomePage())));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => HomePage())));
                 },
                 child: Text("Inicio",style: TextStyle(decoration: TextDecoration.underline),),
               ),
             ),
 
             SizedBox(width: 24),
-
-            Text("Cardápio"),
+            MouseRegion(
+              cursor: SystemMouseCursors.click,
+              child: GestureDetector(
+                onTap: (){
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => Cardapio())));
+                },
+                child: Text("Cardápio",style: TextStyle(decoration: TextDecoration.underline),),
+              ),
+            ),
 
             SizedBox(width: 24),
 
@@ -79,7 +87,7 @@ AppBar appbar_section(car_itens,context) {
               cursor: SystemMouseCursors.click,
               child: GestureDetector(
                 onTap: (){
-                  Navigator.push(context, MaterialPageRoute(builder: ((context) => Historia())));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: ((context) => Historia())));
                 },
                 child: Text("Sobre nós",style: TextStyle(decoration: TextDecoration.underline),),
               ),
