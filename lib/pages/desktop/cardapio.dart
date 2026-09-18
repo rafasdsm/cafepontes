@@ -53,17 +53,16 @@ class Cardapio extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       child: GridView.builder(
-          shrinkWrap: true,
           physics: NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
           itemCount: produtos.length,
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 5,
-            // o tamanho do card de cada produto
             childAspectRatio: 300/400
             ),
           itemBuilder: (context, index) {
             return Padding(
-              padding: EdgeInsets.all(20),
+              padding: EdgeInsets.only(left:20,right:20),
               child: product_container(context,produtos[index]),
               );
           }
@@ -76,7 +75,6 @@ class Cardapio extends StatelessWidget {
     String image_path = produto.image_path;
     String name = produto.nome;
     double price = produto.preco;
-    print("Pão fermentação natural".length);
     return SizedBox(
       child: Stack(
         children: [
@@ -103,7 +101,7 @@ class Cardapio extends StatelessWidget {
             ),
           ),
           Positioned(
-            bottom:0,
+            bottom:60,
             child: Container(
               width: 300,
               height: 100,
