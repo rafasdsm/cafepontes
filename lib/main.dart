@@ -1,6 +1,5 @@
-import 'package:cafepontes/components/produto.dart';
+import 'package:cafepontes/pages/desktop/cardapio.dart';
 import 'package:cafepontes/pages/desktop/home.dart';
-import 'package:cafepontes/pages/desktop/produto_page.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,7 +13,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomePage()  /*ProdutoPage(
+      home: Cardapio()  /*ProdutoPage(
         produto: Produtos().get_produtos()[0],
       ),*/
     );
