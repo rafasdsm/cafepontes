@@ -116,4 +116,11 @@ class Produtos{
     return data;
   }
 
+  List<Produto> sort_by_tipo(List<Produto> produto_list,String _tipo){
+    List<Produto> _produto_list = [];
+    for(var i in produto_list){
+      i.tipo == _tipo ? _produto_list.add(i): null;
+    }
+    return _produto_list;
+  }
 }

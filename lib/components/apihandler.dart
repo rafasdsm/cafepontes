@@ -36,3 +36,29 @@ Future <List<Produto>> pegar_produtos() async{
   
   return produtos;
 }
+
+Future <List<Produto>> pegar_produtos_tipo(String tipo) async{
+  var response = await http.get(
+    Uri.parse(base_url+'/ler_tabela/produtos'),
+  );
+
+  List<dynamic> data = jsonDecode(response.body)["message"];
+  List<Produto> produtos = [];
+
+  for(var c in data){
+    dynamic _tipo = await pegar_tipo(c[1]);
+    _tipo == tipo ? produtos.add(
+      Produto(
+        nome: c[2],
+        descricao: c[3],
+        preco: c[4],
+        qnt_disponivel: c[6],
+        disponivel: c[5],
+        image_path: c[8], 
+        tipo: await pegar_tipo(c[1])
+      )
+    ) : null;
+  }
+  
+  return produtos;
+}

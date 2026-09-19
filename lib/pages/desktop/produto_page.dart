@@ -40,7 +40,7 @@ class _ProdutoPageState extends State<ProdutoPage> {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(50)
                     ),
-                    child: Image.asset(
+                    child: Image.network(
                       widget.produto.image_path,
                       fit:BoxFit.cover
                     ),
@@ -145,7 +145,8 @@ class _ProdutoPageState extends State<ProdutoPage> {
                       ),
                   ),
                 )
-              )
+              ),
+              SizedBox(height: 100,),
             ],
           )
         )
